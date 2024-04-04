@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.ico">
 
     <script src="/_importmap/dynamic-importmap.js"></script>
 
     <script type="module">
-        import 'icons/font-awesome.js';
         import 'components/demo-title.js';
         import 'components/demo-chat.js';
         import 'wc-chatbot';
@@ -16,34 +15,67 @@
 
     <link rel="stylesheet" href="fonts/red-hat-font.min.css">
 
-    <title>ChatBot</title>
+    <title>Bank Buddy Chat Bot</title>
 
     <style>
         :root {
-            --main-bg-color: hsla(0, 0%, 100%, 0.21);
-            --main-highlight-text-color: #e13245;
+            --main-bg-color: white;
+            --rh-dark: #1A1A1A;
+            --rh-red: #ee0000;
         }
 
         body {
             margin: 0;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             font-family: 'Red Hat Text', sans-serif;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            color: var(--lumo-body-text-color);
+            justify-content: space-between;
             background: var(--main-bg-color);
         }
 
+        header {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            background: var(--rh-dark);
+            width:100%;
+            height: 70px;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .banner img {
+            height: 40px;
+            width: auto;
+            max-width: none;
+            vertical-align: middle;
+        }
+        
+        demo-title {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+        }
+        
         chat-bot {
-            --chatbot-avatar-bg-color: var(--main-highlight-text-color);
+            --chatbot-avatar-bg-color: var(--rh-red);
             --chatbot-avatar-margin: 10%;
-            --chatbot-header-bg-color: var(--main-highlight-text-color);;
+            --chatbot-header-bg-color: var(--rh-dark);
             --chatbot-header-title-color: #FFFFFF;
             --chatbot-body-bg-color: var(--main-bg-color);
-            --chatbot-send-button-color: var(--main-highlight-text-color);;
+            --chatbot-send-button-color: var(--rh-red);
         }
 
         .middle {
@@ -59,14 +91,19 @@
 </head>
 
 <body>
+    <header>
+        <div class="banner" onclick="location.href='/';">
+            <img src="/images/logo.svg" alt="tb"/>
+            <h1>Bank Buddy</h1>
+        </div>
+    </header>
+    <demo-title></demo-title>
 
-<demo-title></demo-title>
-
-<div class="middle">
-    <demo-chat>
-        <chat-bot></chat-bot>
-    </demo-chat>
-</div>
+    <div class="middle">
+        <demo-chat>
+            <chat-bot></chat-bot>
+        </demo-chat>
+    </div>
 
 </body>
 
